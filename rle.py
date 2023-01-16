@@ -1,26 +1,43 @@
+# переделал вывод из строки в список тьюплов потому что может возникнуть
+#  путаница c декодированием например ряда одинадцати едениц
+# ( это ещё ладно, на нормализации можно выехать), и идущей сразу за ней
+#  одной двойки.
 
-
-def main(inc:str) -> str:    
-    out = ""
+def zip(inc:str) -> list:    
+    out = []
     tmp = 1
     for i in range(len(inc)):
         try:
             if inc[i+1] == inc[i]:
                 tmp += 1
             else:
-                out += f"{tmp}{inc[i]}"
+                out.append((tmp,f'{inc[i]}'))
                 tmp = 1
         except IndexError:
             if inc[-1] == inc [-2]:
-                out += f"{tmp}{inc[i]}"
+                out.append((tmp,f'{inc[i]}'))
             else:
-                out += f"{tmp}{inc[i]}"
+                out.append((tmp,f'{inc[i]}'))
 
     return out
-    
-print(main("111112222334445"))
-assert main("111112222334445") == "5142233415"
-print(main("AAAAAAFDDCCCCCCCAEEEEEEEEEEEEEEEEE")) 
-assert main("AAAAAAFDDCCCCCCCAEEEEEEEEEEEEEEEEE") == "6A1F2D7C1A17E"
-print(main("AAAAAAFDDCCCCCCCAEEEEEEEEEEEEEEEEEq")) 
-assert main("AAAAAAFDDCCCCCCCAEEEEEEEEEEEEEEEEEq") == "6A1F2D7C1A17E1q"   
+
+
+def extract(inc: list) -> str:
+    out, to_int = "", ""
+    tmp = 1
+    for i in inc:
+        out += i[0]*i[1]
+    return out
+
+
+test_cases = [
+    ["111112222334445", [(5,"1"),(4,"2"),(2,"3"),(3,"4"),(1,"5")]],
+    ["AAAAAAFDDCCCCCCCAEEEEEEEEEEEEEEEEE", [(6,"A"),(1,"F"),(2,"D"),(7,"C"),
+    (1,"A"),(17,"E")]],
+    ["AAAAAAFDDCCCCCCCAEEEEEEEEEEEEEEEEEq", [(6,"A"),(1,"F"),(2,"D"),(7,"C"),
+    (1,"A"), (17,"E"), (1, "q")]]
+]
+
+for i in test_cases:
+    assert zip(i[0]) == i[1]
+    assert extract(zip(i[0])) == i[0]
