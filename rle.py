@@ -38,6 +38,12 @@ test_cases = [
     (1,"A"), (17,"E"), (1, "q")]]
 ]
 
-for i in test_cases:
-    assert zip(i[0]) == i[1]
-    assert extract(zip(i[0])) == i[0]
+
+def main():
+    for i in test_cases:
+        assert zip(i[0]) == i[1]
+        assert extract(zip(i[0])) == i[0]
+
+        
+if __name__ == "__main__":
+    main()

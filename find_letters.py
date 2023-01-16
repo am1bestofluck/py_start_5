@@ -1,9 +1,4 @@
 
-
-with open("text_sample.txt",encoding="utf-8") as doc:
-    text = doc.readlines()
-
-
 def censure ( lines:list[str], exclude_this: str = "ИЕ") -> list[str]:
     "убираем слова из текста"
     output = []
@@ -20,4 +15,12 @@ def censure ( lines:list[str], exclude_this: str = "ИЕ") -> list[str]:
 
     return output
 
-censure(lines =text)
+
+def main():
+    with open("text_sample.txt",encoding="utf-8") as doc:
+        text = doc.readlines()
+    censure(lines =text)
+
+
+if __name__ == "__main__":
+    main()
