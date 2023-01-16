@@ -14,10 +14,7 @@ def zip(inc:str) -> list:
                 out.append((tmp,f'{inc[i]}'))
                 tmp = 1
         except IndexError:
-            if inc[-1] == inc [-2]:
-                out.append((tmp,f'{inc[i]}'))
-            else:
-                out.append((tmp,f'{inc[i]}'))
+            out.append((tmp,f'{inc[i]}'))
 
     return out
 
@@ -35,7 +32,9 @@ test_cases = [
     ["AAAAAAFDDCCCCCCCAEEEEEEEEEEEEEEEEE", [(6,"A"),(1,"F"),(2,"D"),(7,"C"),
     (1,"A"),(17,"E")]],
     ["AAAAAAFDDCCCCCCCAEEEEEEEEEEEEEEEEEq", [(6,"A"),(1,"F"),(2,"D"),(7,"C"),
-    (1,"A"), (17,"E"), (1, "q")]]
+    (1,"A"), (17,"E"), (1, "q")]],
+    ['123',[(1,'1'),(1,'2'),(1,'3')]],
+    ['qt3',[(1,'q'),(1,'t'),(1,'3')]]
 ]
 
 
