@@ -118,11 +118,14 @@ core.geometry('300x300')
 
 
 def pressed0(event) -> None:
-    global buttons
+    global buttons,x_cases
+    global possible_steps
     mask = 0
+    if mask not in possible_steps:
+        return
     buttons[mask].unbind_all('<ButtonRelease-1>')
     buttons[mask].unbind_all(f'{mask+1}')
-    global possible_steps
+    
     try:
         possible_steps.remove(0)
     except KeyError:
@@ -146,11 +149,15 @@ def pressed0(event) -> None:
 
 
 def pressed1(event) -> None:
-    global buttons
+    global buttons,x_cases
+    global possible_steps
     mask = 1
+    if mask not in possible_steps:
+        return
+    if mask not in possible_steps:
+        return
     buttons[mask].unbind_all('<ButtonRelease-1>')
     buttons[mask].unbind_all(f'{mask+1}')
-    global possible_steps
     try:
         possible_steps.remove(1)
     except KeyError:
@@ -174,11 +181,14 @@ def pressed1(event) -> None:
 
 
 def pressed2(event) -> None:
-    global buttons
+    global buttons,x_cases
+    global possible_steps
     mask = 2
+    if mask not in possible_steps:
+        return
     buttons[mask].unbind_all('<ButtonRelease-1>')
     buttons[mask].unbind_all(f'{mask+1}')
-    global possible_steps
+    
     try:
         possible_steps.remove(2)
     except KeyError:
@@ -201,11 +211,13 @@ def pressed2(event) -> None:
 
 
 def pressed3(event) -> None:
-    global buttons
+    global buttons,x_cases
+    global possible_steps
     mask = 3
+    if mask not in possible_steps:
+        return
     buttons[mask].unbind_all('<ButtonRelease-1>')
     buttons[mask].unbind_all(f'{mask+1}')
-    global possible_steps
     try:
         possible_steps.remove(3)
     except KeyError:
@@ -227,11 +239,13 @@ def pressed3(event) -> None:
 
 
 def pressed4(event) -> None:
-    global buttons
+    global buttons,x_cases
+    global possible_steps
     mask = 4
+    if mask not in possible_steps:
+        return
     buttons[mask].unbind_all('<ButtonRelease-1>')
     buttons[mask].unbind_all(f'{mask+1}')
-    global possible_steps
     try:
         possible_steps.remove(4)
     except KeyError:
@@ -253,11 +267,14 @@ def pressed4(event) -> None:
 
 
 def pressed5(event) -> None:
-    global buttons
+    global buttons,x_cases
+    global possible_steps
     mask = 5
+    if mask not in possible_steps:
+        return
     buttons[mask].unbind_all('<ButtonRelease-1>')
     buttons[mask].unbind_all(f'{mask+1}')
-    global possible_steps
+    
     try:
         possible_steps.remove(5)
     except KeyError:
@@ -279,11 +296,14 @@ def pressed5(event) -> None:
 
 
 def pressed6(event) -> None:
-    global buttons
+    global buttons,x_cases
+    global possible_steps
     mask = 6
+    if mask not in possible_steps:
+        return
     buttons[mask].unbind_all('<ButtonRelease-1>')
     buttons[mask].unbind_all(f'{mask+1}')
-    global possible_steps
+    
     try:
         possible_steps.remove(6)
     except KeyError:
@@ -306,10 +326,13 @@ def pressed6(event) -> None:
 
 def pressed7(event) -> None:
     global buttons,x_cases
+    global possible_steps
     mask = 7
+    if mask not in possible_steps:
+        return
     buttons[mask].unbind_all('<ButtonRelease-1>')
     buttons[mask].unbind_all(f'{mask+1}')
-    global possible_steps
+    
     try:
         possible_steps.remove(7)
     except KeyError:
@@ -333,11 +356,14 @@ def pressed7(event) -> None:
 
 
 def pressed8(event) -> None:
-    global buttons
+    global buttons,x_cases
+    global possible_steps
     mask = 8
+    if mask not in possible_steps:
+        return
     buttons[mask].unbind_all('<ButtonRelease-1>')
     buttons[mask].unbind_all(f'{mask+1}')
-    global possible_steps
+    
     try:
         possible_steps.remove(8)
     except KeyError:
